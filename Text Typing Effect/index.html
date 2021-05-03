@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Text Typing Effect</title>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+   <div class="home">
+      <div class="container">
+         <div class="text-box">
+            <h1>
+               Create Your <span class="output"></span>
+               <span class="words">
+                  <span data-text="Website"></span>
+                  <span data-text="Portfolio"></span>
+                  <span data-text="Blog"></span>
+                  <span data-text="Shop"></span>
+               </span>
+            </h1>
+         </div>
+      </div>
+   </div>
+
+
+
+
+   <script>
+      const words=document.querySelector('.words').children;
+      const output=document.querySelector('.output');
+
+      let wordIndex=0;
+      let charIndex=0;
+      let textArray;
+
+      function start(){
+         const text=words[wordIndex].getAttribute('data-text')
+         textArray=text.split('');
+         output.innerHTML='';
+         typing();
+      }
+
+      function typing(){
+
+         if(charIndex==textArray.length){
+            charIndex=0;
+            // next word
+            if (wordIndex==words.length-1){
+               wordIndex=0;
+            }
+            else{
+               wordIndex++;
+            }setTimeout(function(){
+               start();
+            }, 2000)
+         }
+         else{
+            span=document.createElement('span');
+            span.innerHTML=textArray[charIndex];
+            output.appendChild(span);
+            charIndex++;
+            setTimeout(typing, 300)
+         }
+
+      }
+
+      window.onload=start()
+
+   </script>
+</body>
+</html>

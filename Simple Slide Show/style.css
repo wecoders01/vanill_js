@@ -1,0 +1,28 @@
+body{
+   margin: 0;
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.slideshow{
+   height: 100vh;
+   position: relative;
+}
+.slideshow .slide-item{
+   height: 100vh;
+   background-size: cover;
+   background-position: center;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   opacity: 0;
+   animation: opacity 1s ease-in-out;
+   -webkit-animation: opacity 1s ease-in-out;
+}
+.slideshow .slide-item.active{
+   opacity: 1;
+}

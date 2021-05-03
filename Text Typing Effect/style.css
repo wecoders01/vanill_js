@@ -1,0 +1,36 @@
+body{
+   margin: 0;
+   font-family: sans-serif;
+}
+
+*{
+   box-sizing: border-box;
+}
+
+.home{
+   background: linear-gradient(135deg, #e95095, #7049ba);
+   min-height: 100vh;
+   display: flex;
+}
+.container{
+   max-width: 1170px;
+   margin: auto;
+}
+.home .text-box h1{
+   font-size: 60px;
+   font-weight: bold;
+   color: #ffffff;
+   margin: 0;
+}
+
+.home .text-box h1 .output span{
+   display: inline-block;
+   animation: text .5s ease;
+   -webkit-animation: text .5s ease;
+}
+@keyframes text {
+   0%{
+      font-size: 0;
+      opacity: 0;
+   }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Multi Text Typing Effect</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="banner">
+    <h1>
+       <span class="output"></span>
+       <span class="sentences">
+          <span>Responsive Web Design</span>
+          <span>Search Engine Friendly</span>
+          <span>Be Different</span>
+          <span>Be Creative</span>
+       </span>
+    </h1>
+</section>
+   
+
+<script>
+   const output=document.querySelector('.output')
+   const allSentences=document.querySelector('.sentences').children;
+   // Shadow
+   const banner=document.querySelector('.banner')
+      var sentenceIndex = 0;
+      var characterIndex=0;
+      var textArray;
+
+   function start(){
+      const innerText=allSentences[sentenceIndex].innerHTML;
+         textArray=innerText.split("");
+         // Shadow
+         banner.classList.remove('remove')
+         banner.classList.add('close')
+         setTimeout(function(){
+            typingText();
+         }, 1000)
+   }
+
+   function typingText(){
+      // shadow
+      banner.classList.remove('close')
+      banner.classList.add('open')
+
+      if(characterIndex!=textArray.length){
+         output.innerHTML+=textArray[characterIndex];
+         characterIndex++
+         setTimeout(typingText, 200);
+      }
+      else{
+            if(sentenceIndex==allSentences.length-1){
+               sentenceIndex=0;
+            }
+            else{
+               sentenceIndex++;
+            }
+         setTimeout(function(){
+            characterIndex=0;
+            output.innerHTML=""
+            start();
+         }, 4000);
+      }
+   }
+
+
+   window.onload=start();
+</script>
+</body>
+</html>

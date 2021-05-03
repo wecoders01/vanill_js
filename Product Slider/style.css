@@ -1,0 +1,147 @@
+body{
+   margin: 0;
+   font-family: sans-serif;
+}
+
+*{
+   box-sizing: border-box;
+}
+
+.product-demo{
+   min-height: 100vh;
+   padding: 50px 15px;
+   background-color: #f1778f;
+}
+.container{
+   max-width: 1170px;
+   margin: auto;
+}
+
+.product-demo .my-slider{
+   position: relative;
+   overflow: hidden;
+   max-width: 700px;
+   margin: 0 auto 40px;
+}
+
+.product-demo .my-slider .inner-width{
+   transition: margin 1s ease;
+   -webkit-transition: margin 1s ease;
+   -moz-transition: margin 1s ease;
+   -ms-transition: margin 1s ease;
+   -o-transition: margin 1s ease;
+}
+
+.product-demo .my-slider .inner-width .slide{
+   float: left;
+   width: 100%;
+}
+
+.product-demo .my-slider .inner-width .slide .box{
+   display: flex;
+   flex-wrap: nowrap;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-img-area{
+   flex: 0 0 50%;
+   max-width: 50%;
+   position: relative;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-img-area .img img{
+   display: block;
+   width: 100%;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-img-area .list-options ul{
+   margin: 0;
+   list-style: none;
+   padding: 0px;
+   position: absolute;
+   left: 10px;
+   bottom: 10px;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-img-area .list-options ul li{
+   display: inline-block;
+   width: 40px;
+   height: 50px;
+   border: 1px solid #d5d5d5;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-img-area .list-options ul li img{
+   max-width: 100%;
+   max-height: 100%;
+   display: block;
+   opacity: .4;
+   cursor: pointer;
+   transition: opacity .5s ease;
+   -webkit-transition: opacity .5s ease;
+   -moz-transition: opacity .5s ease;
+   -ms-transition: opacity .5s ease;
+   -o-transition: opacity .5s ease;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-img-area .list-options ul li.active img, 
+.product-demo .my-slider .inner-width .slide .box .pro-img-area .list-options ul li:hover img{
+   opacity: 1;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-info{
+   background-color: #ffffff;
+   flex: 0 0 50%;
+   max-width: 50%;
+   padding: 15px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-info .pro-title{
+   margin: 0 0 40px;
+   color: #000000;
+   font-size: 25px;
+   text-transform: uppercase;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-info .pro-brand{
+   margin: 8px 0;
+   color: #444444;
+   text-transform: uppercase;
+   font-size: 16px;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-info .pro-name{
+   margin: 8px 0;
+   color: #3497e5;
+   text-transform: uppercase;
+   font-size: 18px;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-info .pro-price{
+   margin: 8px 0;
+   color: #000000;
+   text-transform: uppercase;
+   font-size: 16px;
+   font-weight: bold;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-info .btn{
+   padding: 20px 30px 0 0;
+}
+.product-demo .my-slider .inner-width .slide .box .pro-info .btn a{
+   background-color: #3497e5;
+   text-decoration: none;
+   text-transform: uppercase;
+   display: block;
+   width: 100%;
+   font-size: 16px;
+   color: #ffffff;
+   text-align: center;
+   padding: 10px;
+}
+.product-demo .my-slider .slide-controls{
+   position: absolute;
+   left: 50%;
+   margin-left: 12px;
+   bottom: 15px;
+}
+.product-demo .my-slider .slide-controls div{
+   display: inline-block;
+   height: 15px;
+   width: 15px;
+   background-color:gray;
+   margin: 0 4px;
+   cursor: pointer;
+}
+.product-demo .my-slider .slide-controls div.active{
+   background-color: #3497e5;
+}

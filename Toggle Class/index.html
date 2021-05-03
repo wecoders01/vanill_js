@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Toggle Class</title>
+
+   <style>
+      h1.newClass {
+         color: red;
+      }
+   </style>
+
+</head>
+<body>
+   <h1 id="text">JavaScript is Easy</h1>
+   <button onclick="toggleClass()">Click</button>
+
+
+   <script>
+
+      var text=document.getElementById('text')
+
+      function toggleClass(){
+
+         // Way One
+         // if(text.classList=='newClass'){
+         //    text.classList.remove('newClass')
+         // }else{
+         //    text.classList.add('newClass');
+         // }
+
+         // Way two
+         if(text.getAttribute('class')=='newClass'){
+            text.setAttribute('class','')
+         }else{
+            text.setAttribute('class','newClass')
+         }
+      }
+
+   </script>
+</body>
+</html>

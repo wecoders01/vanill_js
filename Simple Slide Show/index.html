@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Simple Slide Show</title>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <div class="slideshow">
+      <div class="slides">
+         <div class="slide-item active" style="background-image: url(img/slide1.jpg);"></div>
+         <div class="slide-item" style="background-image: url(img/slide2.jpg);"></div>
+         <div class="slide-item" style="background-image: url(img/slide3.jpg);"></div>
+      </div>
+   </div>
+
+
+
+   <script>
+
+      const slides=document.querySelectorAll('.slide-item')
+      const slideTime=3000;
+      let slideCounter=0;
+
+      // slides[slideCounter].classList.add('active')
+
+      setInterval(nextSlide, slideTime)
+
+      function nextSlide(){
+         slides[slideCounter].classList.remove('active')
+         if(slideCounter != slides.length-1){
+            slideCounter++
+         }
+         else{
+            slideCounter=0
+         }
+         slides[slideCounter].classList.add('active')
+      }
+
+   </script>
+</body>
+</html>
