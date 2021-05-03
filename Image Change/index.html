@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Image Change</title>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+   <div class="product">
+      <div class="main-img">
+         <img src="img/headphone_blue.png" class="pro-image" alt="">
+      </div>
+      <div class="thumb-img">
+         <div class="box active" onclick="changeImage(this)">
+            <img src="img/headphone_blue.png" alt="thumb">
+         </div>
+         <div class="box" onclick="changeImage(this)">
+            <img src="img/headphone_pink.png" alt="thumb">
+         </div>
+         <div class="box" onclick="changeImage(this)">
+            <img src="img/headphone_red.png" alt="thumb">
+         </div>
+      </div>
+   </div>
+
+
+
+
+   <script>
+      const thumbs=document.querySelector(".thumb-img").children;
+        
+      function changeImage(event){
+         document.querySelector(".pro-image").src=(event.children[0].src)
+         
+         for(let i=0; i<thumbs.length; i++){
+            thumbs[i].classList.remove("active")
+         }
+         event.classList.add("active");
+      }
+   </script>
+</body>
+</html>

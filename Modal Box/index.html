@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Modal Box</title>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <button type="button" class="open-modal">Modal</button>
+
+   <!-- Modal -->
+   <div class="modal">
+      <div class="content">
+         <div class="header">
+            <h4>Modal Header</h4>
+            <span class="close-modal">&times;</span>
+         </div>
+         <div class="body">
+            <p>lorem ipsum dummy text....</p>
+            <p>lorem ipsum dummy text....</p>
+         </div>
+         <div class="footer">
+            <p>Modal Footer</p>
+         </div>
+      </div>
+   </div>
+   
+
+
+   <script>
+
+      const modal=document.querySelector('.modal')
+      const openModal=document.querySelector('.open-modal')
+      const closeModal=document.querySelector('.close-modal')
+
+      openModal.onclick=function(){
+         modalBox();
+      }
+      closeModal.onclick=function(){
+         modalBox();
+      }
+
+      // when user clicks anywhere outside of the modal, close it
+      modal.onclick=function(event){
+         if(event.target==modal){
+            modalBox();
+         }
+      }
+
+      function modalBox(){
+         modal.classList.toggle('open')
+      }
+
+   </script>
+</body>
+</html>
