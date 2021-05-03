@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Grid Hover Effect</title>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+   <section class="grid-box">
+      <div class="container">
+         <div class="content">
+            <div class="box">
+               <div class="inner">
+                  <h1>HTML</h1>
+               </div>
+            </div>
+            <div class="box">
+               <div class="inner">
+                  <h1>CSS</h1>
+               </div>
+            </div>
+            <div class="box">
+               <div class="inner">
+                  <h1>JavaScript</h1>
+               </div>
+            </div>
+            <div class="box">
+               <div class="inner">
+                  <h1>Jquery</h1>
+               </div>
+            </div>
+            <div class="box">
+               <div class="inner">
+                  <h1>Bootstrap</h1>
+               </div>
+            </div>
+            <div class="box">
+               <div class="inner">
+                  <h1>ReactJs</h1>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+
+   <script>
+      const allBox=document.querySelector('.content').children;
+      const boxWidth=allBox[0].querySelector('.inner').offsetWidth; //getting first box width 
+      const boxHeight=allBox[0].querySelector('.inner').offsetHeight; //getting first box height
+      const div=document.createElement('div');
+            div.style.position='absolute';
+            div.style.height=boxHeight + 'px';
+            div.style.width=boxWidth + 'px';
+            div.style.backgroundColor= '#E91E63';
+            div.style.transition='all 1s ease'
+            div.style.zIndex= '1';
+            div.style.left=allBox[0].querySelector('.inner').offsetLeft + 'px';
+            div.style.top=allBox[0].querySelector('.inner').offsetTop + 'px';
+            document.querySelector('.grid-box').appendChild(div)
+
+      for(let i=0; i<allBox.length; i++){
+         allBox[i].querySelector('.inner').addEventListener('mouseover', function(){
+            const x=this.offsetLeft;
+            const y=this.offsetTop;
+            div.style.left=x + 'px';
+            div.style.top=y + 'px';
+            
+            // if box height width are not same
+            const height=this.offsetHeight;
+            const width=this.offsetWidth;
+            div.style.height=height + 'px';
+            div.style.width=width + 'px';
+         })
+      }
+
+   </script>
+</body>
+</html>

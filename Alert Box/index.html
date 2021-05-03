@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Alert Box</title>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="alert-box hide hidden">
+      Message Text Here
+      <span class="close-alert">&times;</span>
+   </div>
+
+   <button type="button" class="my-btn">Click Me</button>
+   
+
+   <script>
+
+      const myBtn=document.querySelector('.my-btn');
+      const alertBox=document.querySelector('.alert-box');
+      const closeBtn=document.querySelector('.close-alert');
+      let timer;
+
+      myBtn.addEventListener('click', function(){
+         showAlertBox();
+      })
+      // close alert box after click cross btn
+      closeBtn.addEventListener('click', function(){
+         hideAlertBox();
+         clearTimeout(timer);
+      })
+
+      function showAlertBox(){
+         alertBox.classList.remove('hide')
+         alertBox.classList.add('show')
+
+         //hide animation onload
+         if(alertBox.classList.contains('hidden')){
+            alertBox.classList.remove('hidden')
+         }
+         timer=setTimeout(function(){
+            hideAlertBox();
+         }, 6000)
+      }
+
+      //hide alert box after 6 second
+      function hideAlertBox(){
+         alertBox.classList.remove('show')
+         alertBox.classList.add('hide')
+      }
+
+   </script>
+</body>
+</html>

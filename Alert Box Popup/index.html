@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Alert Box Popup</title>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+   <div class="container">
+      <button type="button" class="btn alert-btn" data-target="alert-success-popup">This is success alert</button>
+      <button type="button" class="btn alert-btn" data-target="alert-warning-popup">This is warning alert</button>
+      <button type="button" class="btn alert-btn" data-target="alert-error-popup">This is error alert</button>
+      <button type="button" class="btn alert-btn" data-target="alert-info-popup">This is info alert</button>
+   </div>
+
+
+   <!-- Alert Success Popup -->
+   <div class="alert-box" id="alert-success-popup">
+      <div class="alert-content">
+         <div class="icon">
+            <img src="img/success.png" alt="alert-icon">
+         </div>
+         <div class="body">
+            <h3>Success Message</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+         </div>
+         <button type="button" class="close-alert">&times;</button>
+      </div>
+   </div>
+   <!-- End Alert Success Popup -->
+   
+   <!-- Alert Warning Popup -->
+   <div class="alert-box" id="alert-warning-popup">
+      <div class="alert-content">
+         <div class="icon">
+            <img src="img/warning.png" alt="alert-icon">
+         </div>
+         <div class="body">
+            <h3>Warning Message</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+         </div>
+         <button type="button" class="close-alert">&times;</button>
+      </div>
+   </div>
+   <!-- End Alert Warning Popup -->
+
+   <!-- Alert Error Popup -->
+   <div class="alert-box" id="alert-error-popup">
+      <div class="alert-content">
+         <div class="icon">
+            <img src="img/error.png" alt="alert-icon">
+         </div>
+         <div class="body">
+            <h3>Error Message</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+         </div>
+         <button type="button" class="close-alert">&times;</button>
+      </div>
+   </div>
+   <!-- End Alert Error Popup -->
+
+   <!-- Alert info Popup -->
+   <div class="alert-box" id="alert-info-popup">
+      <div class="alert-content">
+         <div class="icon">
+            <img src="img/info.png" alt="alert-icon">
+         </div>
+         <div class="body">
+            <h3>Info Message</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+         </div>
+         <button type="button" class="close-alert">&times;</button>
+      </div>
+   </div>
+   <!-- End Alert Info Popup -->
+
+   <script src="script.js"></script>
+</body>
+</html>
